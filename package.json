@@ -5,8 +5,8 @@
   "repository": "https://github.com/HackerThemes/theme-kit",
   "main": "index.js",
   "scripts": {
-	 "test": "echo \"Error: no test specified\" && exit 1",
-	 "compile": "html-includes --src relatos --dest final"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "html-includes --src relatos --dest final"
   },
   "keywords": [
     "bootstrap",
