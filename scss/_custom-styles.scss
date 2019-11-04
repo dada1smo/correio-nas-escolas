@@ -1,0 +1,381 @@
+// Add additional styles here. For example, overwrite certain styles or add new components.
+// Tip: You can use bootstrap's powerful mixins here!
+
+
+//.alert-myalert {
+//  @include alert-variant(#60667d, #1d1d1d, #f4fdff);
+//}
+
+//@each $color, $value in $theme-colors {
+//  .alert-#{$color} {
+//    box-shadow: 3px 3px theme-color-level($color, -3);
+//  }
+//}
+
+html {
+	scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+small,
+button,
+a {
+	font-family: "Montserrat", sans-serif;
+}
+
+p,
+div {
+	font-family: "Open Sans", sans-serif;
+	color: $dark;
+}
+
+a {
+	color: $info;
+
+	&:hover {
+		color: #1063cc;
+	}
+}
+
+$backgroundHeader: (
+	"01-header": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/foto-1.jpg",
+	"02-header": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Fto-1.jpg",
+	"03-header": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/laboratório-de-biologia-2.jpg",
+	"04-header": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/IMG_0091.jpg",
+	"05-header": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/laboratório-de-soldagem.jpg",
+	"06-header": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/a-galera.jpg",
+	"07-header": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/A-fachada.jpg",
+	"08-header": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Abre.jpg",
+	"09-header": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Abre-1.jpg",
+	"10-header": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Abre-2.jpg",
+	"11-header": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/abre.jpg",
+	"12-header": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/abre-1.jpg",
+	"13-header": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/aula-1.jpg",
+	"14-header": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/aula.jpg",
+	"15-header": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/abre-2.jpg",
+	"16-header": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/outra-se-quiser-por-ao-longo-do-texto.jpg",
+	);
+
+@each $post, $url in $backgroundHeader {
+	.post-#{$post} {
+		background-image: url($url);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		width: 100%;
+		min-height: 700px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@include media-breakpoint-down(md) {
+			background-size: contain;
+			min-height: 300px;
+			background-image: none;
+		}
+	}
+}
+
+$backgroundFeature: (
+	"01-feature-01": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/foto-2.jpg",
+	"01-feature-02": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/foto-5.jpg",
+	"01-feature-03": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/foto-7.jpg",
+	"01-feature-04": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/foto-9.jpg",
+
+	"02-feature-01": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Foto-2.jpg",
+	"02-feature-02": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Foto-3.jpg",
+	"02-feature-03": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Foto-4.jpg",
+	"02-feature-04": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Foto-9.jpg",
+	"02-feature-05": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Foto-5.jpg",
+	"02-feature-06": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Foto-6.jpg",
+	"02-feature-07": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Foto-7.jpg",
+	"02-feature-08": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Foto-8.jpg",
+	"02-feature-09": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/foto-11-1.jpg",
+	"02-feature-10": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/foto-10-1.jpg",
+
+	"03-feature-01": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/laboratório-de-física-10.jpg",
+	"03-feature-02": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/alice-gonçalves-16anos-2ano-1.jpg",
+	"03-feature-03": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/raimundo-pereira-prof-de-lingua-portuguesa-1.jpg",
+	"03-feature-04": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/entrada-da-escola.jpg",
+	"03-feature-05": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/DSC0109.jpg",
+	"03-feature-06": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/cauã-alburquerque-herick-de-abreu-harold-nunes-stenio-junior-todos-do-1ano.jpg",
+
+	"04-feature-01": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Foto-1.jpg",
+	"04-feature-02": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Foto-2_.jpg",
+	"04-feature-03": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Foto-3-1.jpg",
+	"04-feature-04": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Foto-4-1.jpg",
+	"04-feature-05": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Foto-5-1.jpg",
+	"04-feature-06": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Foto-6-1.jpg",
+	"04-feature-07": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Foto-7_.jpg",
+	"04-feature-08": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Foto-8-1.jpg",
+
+	"05-feature-01": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/entrada-do-IFB-de-taguatinga.jpg",
+	"05-feature-02": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Auditório-do-IFB-de-taguatinga-2.jpg",
+	"05-feature-03": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/DFGT-equipe-do-fórmula-drone-Alunos-Julia-Vieira-Aline-Leonardo-João-Pedro-Alves-e-Johan-Marcos-e-professora-Patricia-da-Silva-do-meio.jpg",
+	"05-feature-04": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Guilherme-Milhomem-Gabriel-Lucas-Alves-e-Felipe-Matias-da-Silva-estudantes-do-3º-ano-e1571766643358.jpg",
+	"05-feature-05": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Pátio-do-IFB-de-taguatinga.jpg",
+	"05-feature-06": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/laboratório-de-eletrotécnica.jpg",
+
+	"06-feature-01": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/códigos-de-programação-na-tela.jpg",
+	"06-feature-02": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/professores-e-servidores-e-alguns-trofeus-da-escola.jpg",
+	"06-feature-03": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/diretor-Lafaiete-e-filho-2.jpg",
+	"06-feature-04": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Luisa-Oliveira-e-Estela-Rodrigue-2.jpg",
+	"06-feature-05": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/pablo-pacheco-2.jpg",
+	"06-feature-06": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/estudanteAline-Cardoso-3.jpg",
+	"06-feature-07": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Mateus-de-Siqueira-3.jpg",
+	"06-feature-08": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/a-professor-de-educacao-fisica-Nubia-Cristina-de-Araujo-dando-aula-teorica-3.jpg",
+	"06-feature-09": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Eduardo-Lau-Cadeirante-Khayo-Santos-e-Artur-Oliveira-2.jpg",
+	"06-feature-10": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Eduardo-Lau-Cadeirante-e-Khayo-Santos.jpg",
+
+	"07-feature-01": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Tiago-Amaral-Azevedo-16-e-Lara-Xavier-17-alunos-do-2º-ano-2.jpg",
+	"07-feature-02": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Pátio-6.jpg",
+	"07-feature-03": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Horta-Pedro-Sousa-Rocha-Júnior-funcionário-da-limpeza-que-cuida-da-horta.jpg",
+	"07-feature-04": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Lucélio-Fernandes-professor-de-física-5.jpg",
+	"07-feature-05": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Lucélio-Fernandes-professor-de-física-4.jpg",
+	"07-feature-06": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Vitor-Melo-19-aluno-do-3º-ano-2.jpg",
+	"07-feature-07": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Luiz-Felipe-Pimenta-16-aluno-do-2º-ano-toca-violino-4.jpg",
+	"07-feature-08": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/aula-de-gramática-2.jpg",
+	"07-feature-09": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Valdenei-Negrão-Pereira-professor-de-física.jpg",
+	"07-feature-10": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Valdenei-Negrão-Pereira-professor-de-física-2.jpg",
+	"07-feature-11": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/qEdilberto-Maia-professor-de-educação-física-e-alunos.jpg",
+	"07-feature-12": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Professores-e-funcionários.jpg",
+	"07-feature-13": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Diogo-Passeri-Borges-educador-social-2.jpg",
+	"07-feature-14": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Ana-Maria-Gusmão-diretora-2.jpg",
+	"07-feature-15": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Sistema-de-registro-de-entrada-e-saída-de-alunos.jpg",
+	"07-feature-16": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Aula-de-filosofia-5.jpg",
+
+	"08-feature-01": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Aula.jpg",
+	"08-feature-02": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Aluna-Rayla.jpg",
+	"08-feature-03": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Aluno-Paulo-Brito.jpg",
+	"08-feature-04": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Corredor.jpg",
+	"08-feature-05": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Leitura.jpg",
+	"08-feature-06": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Computadores.jpg",
+	"08-feature-07": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Aluna-Karla.jpg",
+	"08-feature-08": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Área-verde.jpg",
+	"08-feature-09": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Aluna-Carol.jpg",
+	"08-feature-10": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Aluno-Vitor.jpg",
+	"08-feature-11": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/aula2.jpg",
+
+	"09-feature-01": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Come-e-faz-lição.jpg",
+	"09-feature-02": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Recreios.jpg",
+	"09-feature-03": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Fachada.jpg",
+	"09-feature-04": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Aluna-Jennify.jpg",
+	"09-feature-05": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/coreografia.jpg",
+	"09-feature-06": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Descontração.jpg",
+	"09-feature-07": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Deivid.jpg",
+	"09-feature-08": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Aluno-Ryan.jpg",
+	"09-feature-09": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Jovens-2.jpg",
+	"09-feature-10": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Jovens-1.jpg",
+	"09-feature-11": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Surama.jpg",
+	"09-feature-12": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Corredor-1.jpg",
+
+	"10-feature-01": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Hora-do-lanche.jpg",
+	"10-feature-02": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Pátio-1.jpg",
+	"10-feature-03": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Aluno-Vitor-1.jpg",
+	"10-feature-04": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Quadro-1.jpg",
+	"10-feature-05": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Boutique-Edivânia.jpg",
+	"10-feature-06": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Ex-alunos-Marcus-Vinícius-e-Marcos-Heitor.jpg",
+	"10-feature-07": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Aluno-Breno-Samuel.jpg",
+	"10-feature-08": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Sala-especial.jpg",
+	"10-feature-09": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Israel.jpg",
+
+	"11-feature-01": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/sentido.jpg",
+	"11-feature-02": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/grupo.jpg",
+	"11-feature-03": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/quadra.jpg",
+	"11-feature-04": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/aula-thalyta-1.jpg",
+	"11-feature-05": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/laboratório.jpg",
+
+	"12-feature-01": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/recreio.jpg",
+	"12-feature-02": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/aluno-Fabrício.jpg",
+	"12-feature-03": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/reunião.jpg",
+	"12-feature-04": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/aula-de-sociologia.jpg",
+	"12-feature-05": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Horta-vertical.jpg",
+	"12-feature-06": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/quadra-1.jpg",
+
+	"13-feature-01": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Grupinho.jpg",
+	"13-feature-02": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/aula-2.jpg",
+	"13-feature-03": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/fachada.jpg",
+	"13-feature-04": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/aluno-Vitor.jpg",
+	"13-feature-05": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/grupo-1.jpg",
+	"13-feature-06": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/sala-especial.jpg",
+	"13-feature-07": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/aula-3-1.jpg",
+	"13-feature-08": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/aluna-Thais.jpg",
+
+	"14-feature-01": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Aluno-Matheus.jpg",
+	"14-feature-02": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Pátio.jpg",
+	"14-feature-03": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/aluna-Maria-Gabriella.jpg",
+	"14-feature-04": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Aluna-Adrienne.jpg",
+	"14-feature-05": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/aula-de-sociologia-1.jpg",
+	"14-feature-06": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Aluna-Ana-Luíza.jpg",
+	"14-feature-07": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/fachada-1.jpg",
+
+	"15-feature-01": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/alunos-trio.jpg",
+	"15-feature-02": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/grupo-2.jpg",
+	"15-feature-03": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Corredores-6.jpg",
+	"15-feature-04": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Professor-de-matematica-Julianderson-Berg-4.jpg",
+	"15-feature-05": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/A-fachada-2.jpg",
+
+	"16-feature-01": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/diretor-e-vice.jpg",
+	"16-feature-02": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Vitória-Rebeca-da-Silva-17-anos-3°-ano.jpg",
+	"16-feature-03": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/quadro.jpg",
+	"16-feature-04": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/sábado.jpg",
+	"16-feature-05": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Izaías-Mendes-Sousa-15-anos-do-1°-ano.jpg",
+	"16-feature-06": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/Éric-Kawã-Fernandes-Teixeira-15-anos-do-1°-ano-3.jpg",
+	"16-feature-07": "http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/corredor.jpg",
+	);
+
+@each $post, $url in $backgroundFeature {
+	.post-#{$post} {
+		width: 100%;
+		min-height: 500px;
+		background-image: url($url);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@include media-breakpoint-down(md) {
+			background-size: cover;
+			background-position: center center;
+			min-height: 300px;
+		}
+	}
+}
+
+.float-paragraph.border-bottom {
+	border-width: 5px !important;
+}
+
+$themePalette: (
+	primary: $primary,
+	secondary: $secondary,
+	success: $success,
+	info: $info,
+	warning: $warning,
+	danger: $danger,
+	light: $light,
+	dark: $dark
+);
+
+@each $underline, $color in $themePalette {
+	.underline-#{$underline} {
+		box-shadow: inset 0 -1px 0 $color;
+	}
+}
+
+h5, small {
+	font-weight: 500 !important;
+}
+
+.card-text {
+	font-size: 14px;
+}
+
+.gallery-nav {
+	min-height: 100vh;
+	height: 100vh;
+	left: 0;
+	top: 0;
+	position: fixed;
+	padding-top: 60px;
+
+	@include media-breakpoint-down(md) {
+		display: none;
+	}
+
+
+	a {
+		font-size: 13px;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+.padding-link {
+
+	.container {
+		padding-top: 60px;
+	}
+
+	h5 {
+	padding-top: 60px;
+	}
+
+	h3 {
+		margin-bottom: -35px;
+		border-bottom: 1px solid $light;
+	}
+}
+
+.btn {
+	font-weight: 500;
+}
+
+.font-weight-medium {
+	font-weight: 500 !important;
+}
+
+.gallery-bg {
+	background-image: url("http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/gallery_bg.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.hero-bg {
+	background-image: url("http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/hero_bg.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: bottom;
+	min-height: 300px;
+}
+
+.map-bg {
+	background-image: url("http://correionasescolas.correiobraziliense.com.br/wp-content/uploads/2019/10/map_bg.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.custom-nav {
+	max-height: 100vh;
+	overflow: auto;
+
+	.nav-dropdown-special {
+		&:hover {
+			background-color: $secondary !important;
+		}
+	}
+
+	.nav-link {
+		font-size: 12px !important;
+		line-height: 14px;
+
+		a {
+			font-weight: 500 !important;
+			font-size: 12px !important;
+			line-height: 14px;
+			background-color: $secondary !important;
+			color: $primary;
+
+			&:hover {
+				text-decoration: none;
+				background-color: $secondary !important;
+				color: #d6aa27;
+			}
+		}
+	}
+}
+
+.fixed-top {
+	z-index: 10000;
+}
